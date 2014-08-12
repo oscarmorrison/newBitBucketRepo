@@ -1,5 +1,3 @@
-Forked from ihttps://bitbucket.org/hannesr/fillbucket/overview
-
 newGit is a way to create a new repo using the bitbucket curl api from the command line
 
 ## Instructions ##
@@ -53,3 +51,7 @@ add files, commit, and push to origin (remote)
 
 
 Enjoy!
+
+-----------
+
+Forked from https://bitbucket.org/hannesr/fillbucket/overview
