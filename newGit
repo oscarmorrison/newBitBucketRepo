@@ -4,10 +4,15 @@
 USERNAME = "YOURBITBUCKETUSERNAME"
 PASSWORD = "YOURBITBUCKETPASSWORD"
 git init
+echo "...git init"
 git add -A .
+echo "...git add -A"
 git commit -m "Initial commit"
-echo "Creating new remote repo on bitbucket"
-curl --user $USERNAME:$PASSWORD https://api.bitbucket.org/1.0/repositories/ --data name=$1 --data is_private='true'
-git remote add origin git@bitbucket.org:$USERNAME/$1.git
+echo "...creating new remote repo on bitbucket"
+echo "...with name ${PWD##*/}"
+curl --user $USERNAME:$PASSWORD https://api.bitbucket.org/1.0/repositories/ --data name=${PWD##*/} --data is_private='true'
+echo "...adding new repo remote URL git@bitbucket.org:$USERNAME/${PWD##*/}.git"
+git remote add origin git@bitbucket.org:$USERNAME/${PWD##*/}.git
+echo "...git push -u origin --all"
 git push -u origin --all
 git push -u origin --tags
